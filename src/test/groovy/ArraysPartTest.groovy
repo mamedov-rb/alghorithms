@@ -23,4 +23,26 @@ class ArraysPartTest extends Specification {
         then:
         newLength == 4
     }
+
+    def "return new length as it was removed all duplicates max two allowed"() {
+        given:
+        def array = [1, 1, 1, 2, 3, 4] as int[]
+
+        when:
+        def newLength = ArraysPart.removeDuplicatesWithMaxTwoAllowedReturningNewLength(array)
+
+        then:
+        newLength == 5
+    }
+
+    def "move zeros to tail returning new array"() {
+        given:
+        def array = [0, 1, 3, 7, 0, 0, 0, 4] as int[]
+
+        when:
+        def changedArray = ArraysPart.moveZerosToTailReturningNewArray(array)
+
+        then:
+        changedArray == [1, 3, 7, 4, 0, 0, 0, 0] as int[]
+    }
 }
