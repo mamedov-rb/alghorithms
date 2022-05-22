@@ -45,4 +45,15 @@ class ArraysPartTest extends Specification {
         then:
         changedArray == [1, 3, 7, 4, 0, 0, 0, 0] as int[]
     }
+
+    def "move zeros to tail returning changed array"() {
+        given:
+        def array = [0, 1, 3, 7, 0, 0, 0, 4] as int[]
+
+        when:
+        def changedArray = ArraysPart.moveZerosToTailReturningChangedArray(array)
+
+        then:
+        changedArray == [1, 3, 7, 4, 0, 0, 0, 0] as int[]
+    }
 }
