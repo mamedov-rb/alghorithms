@@ -1,13 +1,13 @@
 import spock.lang.Specification
 
-class StackPartTest extends Specification {
+class ParenthesesValidatorTest extends Specification {
 
     def "when parentheses validate then success"() {
         given:
         def parenthesesVersionOne = "({[[{}]]}[([]())])"
 
         when:
-        def isValid = StackPart.isValidParentheses(parenthesesVersionOne)
+        def isValid = ParenthesesValidator.isValidParentheses(parenthesesVersionOne)
 
         then:
         isValid
@@ -18,9 +18,9 @@ class StackPartTest extends Specification {
         def parenthesesVersionTwo = "({[[{]]}[([]())])"
 
         when:
-        def isNotValid = StackPart.isValidParentheses(parenthesesVersionTwo)
+        def isValid = ParenthesesValidator.isValidParentheses(parenthesesVersionTwo)
 
         then:
-        !isNotValid
+        !isValid
     }
 }

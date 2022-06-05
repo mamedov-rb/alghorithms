@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class StackPart {
+public class ParenthesesValidator {
 
     private static final Character[][] bracketPairs = {{'(', ')'}, {'[', ']'}, {'{', '}'}};
 
